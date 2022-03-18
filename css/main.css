@@ -53,17 +53,14 @@ form {
 .todo-input:focus {
 	outline: none !important;
 }
-.todo-button {
+button {
 	cursor: pointer;
-}
-.icon {
 	padding: 0.5em;
 	color: #6d6b6b;
 	transition: all 0.3s ease;
 	cursor: pointer;
 }
-
-.icon:hover {
+button:hover {
 	transform: scale(1.2);
 	color: #f2bc41;
 }
@@ -92,4 +89,7 @@ form {
 
 .todo-item {
 	padding: 0 1em;
+}
+.icon {
+	pointer-events: none;
 }
