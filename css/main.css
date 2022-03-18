@@ -33,7 +33,7 @@ form {
 }
 
 .todo-input,
-.todo-button,
+.todo-add-btn,
 .trash-btn,
 .complete-btn {
 	font-size: 1.5rem;
@@ -81,6 +81,7 @@ button:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	transition: all 0.3s ease;
 }
 
 .todo li {
@@ -92,4 +93,15 @@ button:hover {
 }
 .icon {
 	pointer-events: none;
+}
+
+.completed {
+	text-decoration: 2px line-through #f2bc41;
+	opacity: 0.5;
+	transform: scale(0.9);
+}
+
+.fall {
+	transform: translateY(8rem) rotateZ(20deg);
+	opacity: 0;
 }
