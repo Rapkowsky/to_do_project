@@ -23,13 +23,15 @@ body {
 }
 
 header {
-	margin-top: 10em;
+	margin: 4em 5.5em 0 0;
 	font-size: 2rem;
 	text-align: center;
 	color: #f2bc41;
 }
 form {
-	margin: 2em 0;
+	display: flex;
+	align-items: center;
+	margin: 0 0 2em 0;
 }
 
 .todo-input,
@@ -46,6 +48,7 @@ form {
 	padding: 0.5em;
 	border-bottom: 1px solid #f2bc41;
 	color: #dcdcdc;
+	border-radius: 8px;
 }
 .todo-input:focus-visible {
 	outline-color: #000;
@@ -70,10 +73,12 @@ button:hover {
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	max-width: 500px;
+	min-width: 320px;
 }
 
 .todo-list {
-	min-width: 320px;
+	width: 100%;
 	list-style: none;
 }
 
@@ -104,4 +109,39 @@ button:hover {
 .fall {
 	transform: translateY(8rem) rotateZ(20deg);
 	opacity: 0;
+}
+.select {
+	margin: 1em;
+	position: relative;
+	overflow: hidden;
+}
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	border: none;
+	padding: 1.3em;
+	text-align: center;
+	border-bottom: 1px solid #f2bc41;
+	border-radius: 8px;
+	color: #dcdcdc;
+	background-color: #000;
+	z-index: 2;
+	min-width: 150px;
+}
+
+.select::after {
+	content: "\25bc";
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #6d6b6b;
+	pointer-events: none;
+	transition: all 0.3s ease;
+}
+
+.select:hover::after {
+	transform: scale(1.2);
+	color: #f2bc41;
 }
