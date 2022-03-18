@@ -9,21 +9,23 @@ function addTodo(e) {
 	todoDiv.classList.add("todo");
 
 	const newTodo = document.createElement("li");
-	newTodo.innerText = "testRR";
+	newTodo.innerText = todoInput.value;
 	newTodo.classList.add("todo-item");
 	todoDiv.appendChild(newTodo);
 
 	const completeBtn = document.createElement("button");
-	completeBtn.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+	completeBtn.innerHTML = '<i class="icon fa-solid fa-circle-check"></i>';
 	completeBtn.classList.add("complete-btn");
 	todoDiv.appendChild(completeBtn);
 
 	const trashBtn = document.createElement("button");
-	trashBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
-	trashBtn.classList.add("complete-btn");
+	trashBtn.innerHTML = '<i class="icon fa-solid fa-trash"></i>';
+	trashBtn.classList.add("trash-btn");
 	todoDiv.appendChild(trashBtn);
 
 	todoList.appendChild(todoDiv);
+
+	todoInput.value = "";
 }
 
 todoBtn.addEventListener("click", addTodo);
