@@ -54,7 +54,7 @@ form {
 	outline-color: #000;
 }
 .todo-input:focus {
-	outline: none !important;
+	outline: none;
 }
 button {
 	cursor: pointer;
@@ -114,6 +114,9 @@ button:hover {
 	margin: 1em;
 	position: relative;
 	overflow: hidden;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 select {
 	-webkit-appearance: none;
@@ -139,9 +142,15 @@ select {
 	color: #6d6b6b;
 	pointer-events: none;
 	transition: all 0.3s ease;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 .select:hover::after {
 	transform: scale(1.2);
 	color: #f2bc41;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
