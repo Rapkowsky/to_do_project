@@ -14,6 +14,8 @@ function addTodo(e) {
 		newTodo.innerText = todoInput.value;
 		newTodo.classList.add("todo-item");
 		todoDiv.appendChild(newTodo);
+		// ADD TODO TO LOCAL STORAGE
+		saveLocalTodos(todoInput.value);
 
 		const completeBtn = document.createElement("button");
 		completeBtn.innerHTML = '<i class="icon fa-solid fa-circle-check"></i>';
@@ -71,6 +73,18 @@ function filterTodo(e) {
 				break;
 		}
 	});
+}
+
+function saveLocalTodos(todo) {
+	let todos;
+
+	if (localStorage.getItem("todos") === null) {
+		todos = [];
+	} else {
+		todos = JSON.parse(localStorage.getItem("todos"));
+	}
+	todos.push(todo);
+	localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 todoBtn.addEventListener("click", addTodo);
